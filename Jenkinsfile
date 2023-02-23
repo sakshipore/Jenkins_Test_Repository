@@ -4,7 +4,7 @@ pipeline{
         stage("Printing content"){
             steps{
                 sh "pwd"
-                sh "cat /src/App.java"
+                sh "cat README.md"
             }
         }
     }
