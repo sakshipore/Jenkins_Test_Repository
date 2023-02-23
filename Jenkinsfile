@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage("Printing content"){
             steps{
+                sh "pwd"
                 sh "cat /src/App.java"
             }
         }
