@@ -1,13 +1,17 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Printing content"){
-            steps{
-                bat '''
-                    cd src
-                    javac App.java
-                    java App
-                '''
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Compile and Run') {
+            steps {
+                bat 'javac App.java'
+                bat 'java App'
             }
         }
     }
