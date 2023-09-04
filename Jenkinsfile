@@ -3,8 +3,11 @@ pipeline{
     stages{
         stage("Printing content"){
             steps{
-                sh "pwd"
-                sh "cat README.md"
+                bat '''
+                    cd src
+                    javac App.java
+                    java App
+                '''
             }
         }
     }
